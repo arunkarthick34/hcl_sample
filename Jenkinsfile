@@ -3,7 +3,15 @@ node('slave'){
    stage('SCM Checkout'){
      git 'https://github.com/arunkarthick34/hcl_sample.git'
    }
-		
+	
+	   stage('SonarQube Analysis') {
+	    
+	        withSonarQubeEnv('sonar') { 
+	          sh "/bin/mvn sonar:sonar"
+	        }
+	   
+	    }
+	
    stage('Compile-Package'){
 
 	   sh "mvn clean install"
@@ -13,15 +21,9 @@ node('slave'){
 	
 	   
 	  
-   } /*
-   stage('SonarQube Analysis') {
+   } 
+
 	    
-	        withSonarQubeEnv('sonar') { 
-	          sh "/bin/mvn sonar:sonar"
-	        }
-	   
-	    }
-	    */
    stage('Build Docker Imager'){
    sh 'docker build -t arunkarthick34/my_hcl:0.1 .'
    } 
