@@ -1,7 +1,7 @@
 node{
 	
    stage('SCM Checkout'){
-     git 'https://github.com/arunkarthick34/sample_hcl.git'
+     git 'https://github.com/arunkarthick34/hcl_sample.git'
    }
 		/*
    stage('Compile-Package'){
