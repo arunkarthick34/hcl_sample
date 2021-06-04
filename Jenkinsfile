@@ -21,7 +21,7 @@ node('slave'){
 	        }
 	   
 	    }
-	    
+	    */
    stage('Build Docker Imager'){
    sh 'docker build -t arunkarthick34/my_hcl:0.1 .'
    } 
@@ -31,7 +31,7 @@ node('slave'){
     }
    sh 'docker push arunkarthick34/my_hcl:0.1'
    }
-
+/*
    stage('Remove Previous Container'){
 	try{
 		sh 'docker rm -f tomcattest'
