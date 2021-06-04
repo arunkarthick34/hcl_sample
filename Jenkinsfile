@@ -5,17 +5,15 @@ node{
    }
 		
    stage('Compile-Package'){
-	   try{
+
 	   sh "mvn clean package"
 	   sh 'mv target/myweb*.war target/newapp.war'
 	   sh 'cp target/newapp.war /home/newapp.war'
-	   }
-	   finally{
-		   echo "success"
-	   }
 	   
-	/*   
-   } 
+	
+	   
+	  
+   } /*
    stage('SonarQube Analysis') {
 	    
 	        withSonarQubeEnv('sonar') { 
