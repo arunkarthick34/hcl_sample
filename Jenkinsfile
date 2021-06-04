@@ -3,7 +3,7 @@ node{
    stage('SCM Checkout'){
      git 'https://github.com/arunkarthick34/hcl_sample.git'
    }
-		/*
+		
    stage('Compile-Package'){
 	   try{
 	   sh "mvn clean package"
@@ -14,7 +14,7 @@ node{
 		   echo "success"
 	   }
 	   
-	   
+	/*   
    } 
    stage('SonarQube Analysis') {
 	    
