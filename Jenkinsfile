@@ -6,7 +6,7 @@ node('slave'){
 		
    stage('Compile-Package'){
 
-	   sh "mvn clean package"
+	   sh "mvn clean install"
 	   sh 'mv target/myweb*.war target/newapp.war'
 	   sh 'cp target/newapp.war /home/newapp.war'
 	   
