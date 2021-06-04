@@ -1,4 +1,4 @@
-node{
+node('slave'){
 	
    stage('SCM Checkout'){
      git 'https://github.com/arunkarthick34/hcl_sample.git'
